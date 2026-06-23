@@ -1,0 +1,301 @@
+       *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:rgba(0,0,0,0.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid #800020;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#800020;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#800020;
+}
+
+.socials{
+    display:flex;
+    gap:20px;
+}
+
+.socials a{
+    color:white;
+    font-size:22px;
+    transition:0.3s;
+}
+
+.socials a:hover{
+    color:#800020;
+}
+
+/* SECTIONS */
+
+section{
+    min-height:100vh;
+    padding:120px 60px;
+}
+
+/* HOME */
+
+#home{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+/* NAME BEHIND IMAGE */
+
+.background-text{
+    position:absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:11rem;
+    font-weight:900;
+    white-space:nowrap;
+    color:rgba(255,255,255,0.08);
+    z-index:1;
+    pointer-events:none;
+    text-shadow:0 0 20px rgba(128,0,32,0.4);
+}
+
+/* CHARACTER */
+
+.character-container{
+    position:relative;
+    width:700px;
+    height:750px;
+    z-index:2;
+}
+
+.base-image,
+.reveal-image{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.base-image{
+    z-index:2;
+    animation:float 4s ease-in-out infinite;
+}
+
+.reveal-image{
+    z-index:3;
+    opacity:0;
+    pointer-events:none;
+    filter:
+    drop-shadow(0 0 15px crimson)
+    drop-shadow(0 0 40px red);
+}
+
+/* HERO TEXT */
+
+.hero-text{
+    text-align:center;
+    z-index:2;
+    margin-top:30px;
+}
+
+.hero-text h2{
+    font-size:42px;
+    color:#ffffff;
+    margin-bottom:10px;
+}
+
+.hero-text p{
+    color:#cccccc;
+    font-size:18px;
+}
+
+/* SECTION TITLES */
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#800020;
+    font-size:40px;
+}
+
+/* CARD */
+
+.card{
+    max-width:900px;
+    margin:auto;
+    background:#111;
+    padding:30px;
+    border-radius:20px;
+    border:2px solid #800020;
+    line-height:1.8;
+}
+
+/* SKILLS */
+
+.skill-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.skill-card{
+    width:220px;
+    padding:20px;
+    text-align:center;
+    background:#111;
+    border:2px solid #800020;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px rgba(128,0,32,0.5);
+}
+
+/* PROJECT */
+
+.project-card{
+    max-width:900px;
+    margin:auto;
+    background:#111;
+    padding:30px;
+    border-radius:20px;
+    border:2px solid #800020;
+}
+
+.project-card h3{
+    color:#b22222;
+    margin-bottom:15px;
+}
+
+/* CERTIFICATIONS */
+
+.certificate-list{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.certificate-card{
+    background:#111;
+    padding:20px;
+    border-radius:15px;
+    border:2px solid #800020;
+    transition:0.3s;
+}
+
+.certificate-card:hover{
+    transform:translateX(10px);
+}
+
+/* CONTACT */
+
+#contact{
+    text-align:center;
+}
+
+#contact p{
+    margin:15px 0;
+}
+
+/* FLOATING EFFECT */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    header{
+        padding:20px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .background-text{
+        font-size:4rem;
+        text-align:center;
+    }
+
+    .character-container{
+        width:320px;
+        height:420px;
+    }
+
+    .hero-text h2{
+        font-size:28px;
+    }
+
+    .hero-text p{
+        font-size:15px;
+    }
+
+    section{
+        padding:120px 20px;
+    }
+}
